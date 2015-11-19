@@ -20,12 +20,12 @@ def on_click():
 	click_pos = (pygame.mouse.get_pos() [0], pygame.mouse.get_pos() [1])
 	#check to see if exit has been pressed
 	if 200 <= click_pos[0] <= 300 and 130 <= click_pos[1] <=230:
-		print "You pressed exit" 
+		print "You pressed exit"
 		button(0)
 	#now check to see if button 1 was pressed
 	if 15 <= click_pos[0] <= 125 and 15 <= click_pos[1] <=50:
                 print "You pressed button 1"
-                button(1)	
+                button(1)
 	#now check to see if button 2 was pressed
         if 15 <= click_pos[0] <= 125 and 65 <= click_pos[1] <=100:
                 print "You pressed button 2"
@@ -51,22 +51,22 @@ def button(number):
 		time.sleep(5)
 		sys.exit()
 
-	if number == 1:		
+	if number == 1:
                 time.sleep(5) #do something interesting here
      		sys.exit()
-		
-	if number == 2:		
+
+	if number == 2:
 		time.sleep(5) #do something interesting here
                 sys.exit()
-		 
-	if number == 3:	
+
+	if number == 3:
 		time.sleep(5) #do something interesting here
                 sys.exit()
 
 	if number == 4:
 		time.sleep(5) #do something interesting here
                 sys.exit()
-	
+
 #set size of the screen
 size = width, height = 320, 240
 
@@ -80,7 +80,7 @@ screen = pygame.display.set_mode(size)
 
 #set up the fixed items on the menu
 screen.fill(blue) #change the colours if needed
-logo=pygame.image.load(“logo.tiff")
+logo=pygame.image.load("logo.tiff")
 exit=pygame.image.load("exit.tiff")
 screen.blit(logo,(210,5))
 screen.blit(exit,(200,130))
@@ -93,9 +93,9 @@ make_button("Menu item 3", 20, 120, white)
 make_button("Menu item 4", 20, 170, white)
 
 #While loop to manage touch screen inputs
-while 1:	
+while 1:
 	for event in pygame.event.get():
-		if event.type == pygame.MOUSEBUTTONDOWN: 
+		if event.type == pygame.MOUSEBUTTONDOWN:
 			print "screen pressed" #for debugging purposes
 			pos = (pygame.mouse.get_pos() [0], pygame.mouse.get_pos() [1])
 			print pos #for checking
@@ -103,7 +103,7 @@ while 1:
 			on_click()
 
 #ensure there is always a safe way to end the program if the touch screen fails
-		
+
 		if event.type == KEYDOWN:
 			if event.key == K_ESCAPE:
 				sys.exit()
